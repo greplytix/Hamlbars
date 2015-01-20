@@ -4,19 +4,205 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>handlebars</string>
-		<string>handlebars.html</string>
-		<string>hbr</string>
-		<string>hbrs</string>
-		<string>hbs</string>
-		<string>mustache</string>
-		<string>template</string>
-		<string>tmpl</string>
+		<string>haml</string>
 	</array>
 	<key>name</key>
-	<string>Handlebars</string>
+	<string>Hamlbars</string>
 	<key>patterns</key>
 	<array>
+	<dict>
+			<key>begin</key>
+			<string>^\s*==</string>
+			<key>contentName</key>
+			<string>string.quoted.double.ruby</string>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#interpolated_ruby</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.prolog.haml</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^(!!!)($|\s.*)</string>
+			<key>name</key>
+			<string>meta.prolog.haml</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.comment.haml</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^ *(/)\s*\S.*$\n?</string>
+			<key>name</key>
+			<string>comment.line.slash.haml</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^( *)(/)\s*$</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.section.comment.haml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^(?!\1  )</string>
+			<key>name</key>
+			<string>comment.block.haml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>text.haml</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*(?:((%)([\w:]+))|(?=\.|#))</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.haml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.haml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.haml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>$|(?!\.|#|\{|\[|=|-|~|/)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>==</string>
+					<key>contentName</key>
+					<string>string.quoted.double.ruby</string>
+					<key>end</key>
+					<string>$\n?</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#interpolated_ruby</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\.[\w-]+</string>
+					<key>name</key>
+					<string>entity.name.tag.class.haml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>#[\w-]+</string>
+					<key>name</key>
+					<string>entity.name.tag.id.haml</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\{(?=.*\}|.*\|\s*$)</string>
+					<key>end</key>
+					<string>\}|$|^(?!.*\|\s*$)</string>
+					<key>name</key>
+					<string>meta.section.attributes.haml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.ruby.rails</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#continuation</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\[(?=.*\]|.*\|\s*$)</string>
+					<key>end</key>
+					<string>\]|$|^(?!.*\|\s*$)</string>
+					<key>name</key>
+					<string>meta.section.object.haml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.ruby.rails</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#continuation</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#rubyline</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>/</string>
+					<key>name</key>
+					<string>punctuation.terminator.tag.haml</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.escape.haml</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\s*(\\.)</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*(?==|-|~)</string>
+			<key>end</key>
+			<string>$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#rubyline</string>
+				</dict>
+			</array>
+		</dict>
 		<dict>
 			<key>include</key>
 			<string>#yfm</string>
@@ -66,14 +252,14 @@
 					<key>end</key>
 					<string>--\}\}</string>
 					<key>name</key>
-					<string>comment.block.handlebars</string>
+					<string>comment.block.hamlbars</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>@\w*</string>
 							<key>name</key>
-							<string>keyword.annotation.handlebars</string>
+							<string>keyword.annotation.hamlbars</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -117,17 +303,17 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.handlebars</string>
+					<string>variable.parameter.hamlbars</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -137,11 +323,11 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.function.block.start.handlebars</string>
+			<string>meta.function.block.start.hamlbars</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -160,14 +346,14 @@
 					<key>end</key>
 					<string>\}\}</string>
 					<key>name</key>
-					<string>comment.block.handlebars</string>
+					<string>comment.block.hamlbars</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>@\w*</string>
 							<key>name</key>
-							<string>keyword.annotation.handlebars</string>
+							<string>keyword.annotation.hamlbars</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -211,12 +397,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -226,11 +412,11 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.function.block.end.handlebars</string>
+			<string>meta.function.block.end.hamlbars</string>
 			<key>patterns</key>
 			<array/>
 		</dict>
@@ -728,7 +914,7 @@
 		<key>inline_script</key>
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:script))\b(?:.*(type)=(["'](?:text/x-handlebars-template|text/x-handlebars|text/template)["']))(?![^&gt;]*/&gt;)</string>
+			<string>(?:^\s+)?(&lt;)((?i:script))\b(?:.*(type)=(["'](?:text/x-hamlbars-template|text/x-hamlbars|text/template)["']))(?![^&gt;]*/&gt;)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -763,7 +949,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>source.handlebars.embedded.html</string>
+			<string>source.hamlbars.embedded.html</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -831,12 +1017,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.handlebars</string>
+					<string>variable.parameter.hamlbars</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -846,11 +1032,11 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.handlebars</string>
+					<string>support.constant.hamlbars</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.function.inline.other.handlebars</string>
+			<string>meta.function.inline.other.hamlbars</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -896,7 +1082,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.double.handlebars</string>
+			<string>string.quoted.double.hamlbars</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -948,7 +1134,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.single.handlebars</string>
+			<string>string.quoted.single.hamlbars</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1096,7 +1282,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.html.handlebars</string>
+	<string>source.hamlbars</string>
 	<key>uuid</key>
 	<string>61ebb4ef-ed49-461f-98d7-e17067fce16a</string>
 </dict>
