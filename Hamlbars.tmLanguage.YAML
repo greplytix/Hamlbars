@@ -5,7 +5,7 @@ fileTypes:
 name: Hamlbars
 patterns:
 -   match: ((\{)+else\}+)
-    name: string.hamlbars
+    name: invalid.deprecated.hamlbars
 -   begin: ^\s*==
     contentName: string.quoted.double.ruby
     end: $\n?
@@ -103,15 +103,15 @@ repository:
         begin: (\{\{~?\#)([-a-zA-Z0-9_\./]+)\s?+(@?[-a-zA-Z0-9_\./]+)*
         beginCaptures:
             '1':
-                name: support.constant.hamlbars
+                name: invalid.deprecated.hamlbars
             '2':
-                name: support.constant.hamlbars
+                name: invalid.deprecated.hamlbars
             '3':
                 name: variable.parameter.hamlbars
         end: (~?\}\})
         endCaptures:
             '1':
-                name: support.constant.hamlbars
+                name: invalid.deprecated.hamlbars
         name: meta.function.block.start.hamlbars
         patterns:
         -   include: '#string'
@@ -137,13 +137,13 @@ repository:
         begin: (\{\{~?/)([a-zA-Z0-9_\.-]+)\s*
         beginCaptures:
             '1':
-                name: support.constant.hamlbars
+                name: invalid.deprecated.hamlbars
             '2':
-                name: support.constant.hamlbars
+                name: invalid.deprecated.hamlbars
         end: (~?\}\})
         endCaptures:
             '1':
-                name: support.constant.hamlbars
+                name: invalid.deprecated.hamlbars
         name: meta.function.block.end.hamlbars
         patterns: []
     entities:

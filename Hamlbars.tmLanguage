@@ -16,7 +16,7 @@
 			<key>match</key>
 			<string>((\{)+else\}+)</string>
 			<key>name</key>
-			<string>string.hamlbars</string>
+			<string>invalid.deprecated.hamlbars</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -311,12 +311,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.hamlbars</string>
+					<string>invalid.deprecated.hamlbars</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.hamlbars</string>
+					<string>invalid.deprecated.hamlbars</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -331,7 +331,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.hamlbars</string>
+					<string>invalid.deprecated.hamlbars</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -405,12 +405,12 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.hamlbars</string>
+					<string>invalid.deprecated.hamlbars</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.hamlbars</string>
+					<string>invalid.deprecated.hamlbars</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -420,7 +420,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.hamlbars</string>
+					<string>invalid.deprecated.hamlbars</string>
 				</dict>
 			</dict>
 			<key>name</key>
