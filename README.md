@@ -1,7 +1,7 @@
 Hamlbars
 ========
 
-Sublime Text 3 syntax definitions for .hamlbars files which is a combination of both Haml and Handlebars.  
+Sublime Text 3 syntax definitions and theming for .hamlbars files which is a combination of both Haml and Handlebars.  
 
 ## Development Pipeline
 
