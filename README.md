@@ -1,11 +1,11 @@
 Hamlbars
 ========
 
-Sublime Text 3 Syntax highlighting for .hamlbars files which is a combination of both Haml and Handlebars   
+Sublime Text 3 syntax definitions for .hamlbars files which is a combination of both Haml and Handlebars.  
 
 ## Credits
 
-This package has been adapted from [Handlebars](https://github.com/daaain/Handlebars) by [Daniel Demmel](https://github.com/daaain) and combined with built-in Sublime Text 3 support for Haml.
+This package has been adapted from [Handlebars](https://github.com/daaain/Handlebars) by [Daniel Demmel](https://github.com/daaain), which was adapted from [Nicholas Westlake's](https://github.com/nrw) Handlebars [package](https://github.com/nrw/sublime-text-handlebars), and has been combined with built-in Sublime Text 3 support for Haml.
 
 ## License
 
