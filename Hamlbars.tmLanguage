@@ -16,7 +16,7 @@
 			<key>match</key>
 			<string>((\{)+else\}+)</string>
 			<key>name</key>
-			<string>support.type.hamlbars</string>
+			<string>string.hamlbars</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -128,7 +128,7 @@
 					<key>match</key>
 					<string>\.[\w-]+</string>
 					<key>name</key>
-					<string>entity.name.tag.class.hamlbars</string>
+					<string>string.hamlbars</string>
 				</dict>
 				<dict>
 					<key>match</key>

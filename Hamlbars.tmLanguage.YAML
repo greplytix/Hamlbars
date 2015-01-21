@@ -5,7 +5,7 @@ fileTypes:
 name: Hamlbars
 patterns:
 -   match: ((\{)+else\}+)
-    name: support.type.hamlbars
+    name: string.hamlbars
 -   begin: ^\s*==
     contentName: string.quoted.double.ruby
     end: $\n?
@@ -45,7 +45,7 @@ patterns:
         patterns:
         -   include: '#interpolated_ruby'
     -   match: \.[\w-]+
-        name: entity.name.tag.class.hamlbars
+        name: string.hamlbars
     -   match: '#[\w-]+'
         name: entity.name.tag.id.hamlbars
     -   begin: \{(?=.*\}|.*\|\s*$)
