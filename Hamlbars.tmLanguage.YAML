@@ -4,6 +4,8 @@ fileTypes:
 - hamlbars
 name: Hamlbars
 patterns:
+-   match: (".*")
+    name: entity.other.inherited-class.hamlbars
 -   match: ((\{)+else\}+)
     name: invalid.deprecated.hamlbars
 -   begin: ^\s*==
@@ -39,21 +41,10 @@ patterns:
             name: entity.name.tag.hamlbars
     end: $|(?!\.|#|\{|\[|=|-|~|/)
     patterns:
-    -   begin: ==
-        contentName: string.quoted.double.ruby
-        end: $\n?
-        patterns:
-        -   include: '#interpolated_ruby'
     -   match: \.[\w-]+
         name: string.hamlbars
     -   match: '#[\w-]+'
         name: entity.name.tag.id.hamlbars
-    -   begin: \{(?=.*\}|.*\|\s*$)
-        end: \}|$|^(?!.*\|\s*$)
-        name: meta.section.attributes.hamlbars
-        patterns:
-        -   include: source.ruby.rails
-        -   include: '#continuation'
     -   begin: \[(?=.*\]|.*\|\s*$)
         end: \]|$|^(?!.*\|\s*$)
         name: meta.section.object.hamlbars

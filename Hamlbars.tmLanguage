@@ -14,6 +14,12 @@
 	<array>
 		<dict>
 			<key>match</key>
+			<string>(".*")</string>
+			<key>name</key>
+			<string>entity.other.inherited-class.hamlbars</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>((\{)+else\}+)</string>
 			<key>name</key>
 			<string>invalid.deprecated.hamlbars</string>
@@ -110,21 +116,6 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>==</string>
-					<key>contentName</key>
-					<string>string.quoted.double.ruby</string>
-					<key>end</key>
-					<string>$\n?</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#interpolated_ruby</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
 					<key>match</key>
 					<string>\.[\w-]+</string>
 					<key>name</key>
@@ -135,25 +126,6 @@
 					<string>#[\w-]+</string>
 					<key>name</key>
 					<string>entity.name.tag.id.hamlbars</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>\{(?=.*\}|.*\|\s*$)</string>
-					<key>end</key>
-					<string>\}|$|^(?!.*\|\s*$)</string>
-					<key>name</key>
-					<string>meta.section.attributes.hamlbars</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>source.ruby.rails</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#continuation</string>
-						</dict>
-					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
