@@ -14,7 +14,7 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>(\{\{else\}\})</string>
+			<string>((\{)+else\}+)</string>
 			<key>name</key>
 			<string>else.hamlbars</string>
 		</dict>
