@@ -4,6 +4,12 @@ fileTypes:
 - hamlbars
 name: Hamlbars
 patterns:
+-   match: (\{\{else\}\})
+    name: else.hamlbars
+-   match:
+    name: logic.start
+-   match:
+    name: logic.end
 -   begin: ^\s*==
     contentName: string.quoted.double.ruby
     end: $\n?
