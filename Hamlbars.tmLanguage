@@ -16,7 +16,7 @@
 			<key>match</key>
 			<string>((\{)+else\}+)</string>
 			<key>name</key>
-			<string>else.hamlbars</string>
+			<string>support.type.hamlbars</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -39,13 +39,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.prolog.haml</string>
+					<string>punctuation.definition.prolog.hamlbars</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>^(!!!)($|\s.*)</string>
 			<key>name</key>
-			<string>meta.prolog.haml</string>
+			<string>meta.prolog.hamlbars</string>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -53,13 +53,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.comment.haml</string>
+					<string>punctuation.section.comment.hamlbars</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>^ *(/)\s*\S.*$\n?</string>
 			<key>name</key>
-			<string>comment.line.slash.haml</string>
+			<string>comment.line.slash.hamlbars</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -69,18 +69,18 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.comment.haml</string>
+					<string>punctuation.section.comment.hamlbars</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>^(?!\1  )</string>
 			<key>name</key>
-			<string>comment.block.haml</string>
+			<string>comment.block.hamlbars</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>text.haml</string>
+					<string>text.hamlbars</string>
 				</dict>
 			</array>
 		</dict>
@@ -92,17 +92,17 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>meta.tag.haml</string>
+					<string>meta.tag.hamlbars</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.haml</string>
+					<string>punctuation.definition.tag.hamlbars</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.haml</string>
+					<string>entity.name.tag.hamlbars</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -128,13 +128,13 @@
 					<key>match</key>
 					<string>\.[\w-]+</string>
 					<key>name</key>
-					<string>entity.name.tag.class.haml</string>
+					<string>entity.name.tag.class.hamlbars</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>#[\w-]+</string>
 					<key>name</key>
-					<string>entity.name.tag.id.haml</string>
+					<string>entity.name.tag.id.hamlbars</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -142,7 +142,7 @@
 					<key>end</key>
 					<string>\}|$|^(?!.*\|\s*$)</string>
 					<key>name</key>
-					<string>meta.section.attributes.haml</string>
+					<string>meta.section.attributes.hamlbars</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -161,7 +161,7 @@
 					<key>end</key>
 					<string>\]|$|^(?!.*\|\s*$)</string>
 					<key>name</key>
-					<string>meta.section.object.haml</string>
+					<string>meta.section.object.hamlbars</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -182,7 +182,7 @@
 					<key>match</key>
 					<string>/</string>
 					<key>name</key>
-					<string>punctuation.terminator.tag.haml</string>
+					<string>punctuation.terminator.tag.hamlbars</string>
 				</dict>
 			</array>
 		</dict>
@@ -192,7 +192,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>meta.escape.haml</string>
+					<string>meta.escape.hamlbars</string>
 				</dict>
 			</dict>
 			<key>match</key>
