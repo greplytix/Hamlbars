@@ -45,9 +45,9 @@ patterns:
         patterns:
         -   include: '#interpolated_ruby'
     -   match: \.[\w-]+
-        name: entity.other.inherited-class.hamlbars
+        name: support.class.hamlbars
     -   match: '#[\w-]+'
-        name: entity.other.inherited-class.hamlbars
+        name: support.class.hamlbars
     -   begin: \{(?=.*\}|.*\|\s*$)
         end: \}|$|^(?!.*\|\s*$)
         name: meta.section.attributes.hamlbars
@@ -361,7 +361,7 @@ repository:
             '1':
                 name: support.constant.hamlbars
             '3':
-                name: variable.parameter.hamlbars
+                name: entity.name.function.hamlbars
         end: (~?\}\}\}*)
         endCaptures:
             '1':

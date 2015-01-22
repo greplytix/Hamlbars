@@ -128,13 +128,13 @@
 					<key>match</key>
 					<string>\.[\w-]+</string>
 					<key>name</key>
-					<string>entity.other.inherited-class.hamlbars</string>
+					<string>support.class.hamlbars</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>#[\w-]+</string>
 					<key>name</key>
-					<string>entity.other.inherited-class.hamlbars</string>
+					<string>support.class.hamlbars</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1030,7 +1030,7 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.hamlbars</string>
+					<string>entity.name.function.hamlbars</string>
 				</dict>
 			</dict>
 			<key>end</key>
