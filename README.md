@@ -8,7 +8,9 @@ Sublime Text 3 syntax definitions and theming for .hamlbars files which is a com
 Clone this repository into one of the following directories:
 
 **OS X:** ~/Library/Application Support/Sublime Text 3/Packages/User
+
 **Windows:** %APPDATA%/Roaming/Sublime Text 3/Packages/User
+
 **Linux:** ~/.config/sublime-text-3/Packages/User
 
 ## Development Pipeline
