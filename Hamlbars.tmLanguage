@@ -128,13 +128,13 @@
 					<key>match</key>
 					<string>\.[\w-]+</string>
 					<key>name</key>
-					<string>entity.name.tag.class.hamlbars</string>
+					<string>entity.other.inherited-class.hamlbars</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>#[\w-]+</string>
 					<key>name</key>
-					<string>entity.name.tag.id.hamlbars</string>
+					<string>entity.other.inherited-class.hamlbars</string>
 				</dict>
 				<dict>
 					<key>begin</key>
