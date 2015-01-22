@@ -3,6 +3,14 @@ Hamlbars
 
 Sublime Text 3 syntax definitions and theming for .hamlbars files which is a combination of both Haml and Handlebars.  
 
+## Installation
+### Manual
+Clone this repository into one of the following directories:
+
+**OS X:** ~/Library/Application Support/Sublime Text 3/Packages/User
+**Windows:** %APPDATA%/Roaming/Sublime Text 3/Packages/User
+**Linux:** ~/.config/sublime-text-3/Packages/User
+
 ## Development Pipeline
 
 Contributors, when updating the syntax definitions, please transcompile the Hamlbars.tmLanguage.YAML (YAML) file to the Hamlbars.tmLanguage (plist) file via [SerializedDataConverter](https://packagecontrol.io/packages/SerializedDataConverter).
