@@ -4,10 +4,8 @@ fileTypes:
 - hamlbars
 name: Hamlbars
 patterns:
--   match: (".*")
-    name: entity.other.inherited-class.hamlbars
 -   match: ((\{)+else\}+)
-    name: invalid.deprecated.hamlbars
+    name: support.type.hamlbars
 -   begin: ^\s*==
     contentName: string.quoted.double.ruby
     end: $\n?
@@ -41,10 +39,21 @@ patterns:
             name: entity.name.tag.hamlbars
     end: $|(?!\.|#|\{|\[|=|-|~|/)
     patterns:
+    -   begin: ==
+        contentName: string.quoted.double.ruby
+        end: $\n?
+        patterns:
+        -   include: '#interpolated_ruby'
     -   match: \.[\w-]+
-        name: string.hamlbars
+        name: entity.name.tag.class.hamlbars
     -   match: '#[\w-]+'
         name: entity.name.tag.id.hamlbars
+    -   begin: \{(?=.*\}|.*\|\s*$)
+        end: \}|$|^(?!.*\|\s*$)
+        name: meta.section.attributes.hamlbars
+        patterns:
+        -   include: source.ruby.rails
+        -   include: '#continuation'
     -   begin: \[(?=.*\]|.*\|\s*$)
         end: \]|$|^(?!.*\|\s*$)
         name: meta.section.object.hamlbars
@@ -94,15 +103,15 @@ repository:
         begin: (\{\{~?\#)([-a-zA-Z0-9_\./]+)\s?+(@?[-a-zA-Z0-9_\./]+)*
         beginCaptures:
             '1':
-                name: invalid.deprecated.hamlbars
+                name: support.constant.hamlbars
             '2':
-                name: invalid.deprecated.hamlbars
+                name: support.constant.hamlbars
             '3':
                 name: variable.parameter.hamlbars
         end: (~?\}\})
         endCaptures:
             '1':
-                name: invalid.deprecated.hamlbars
+                name: support.constant.hamlbars
         name: meta.function.block.start.hamlbars
         patterns:
         -   include: '#string'
@@ -128,13 +137,13 @@ repository:
         begin: (\{\{~?/)([a-zA-Z0-9_\.-]+)\s*
         beginCaptures:
             '1':
-                name: invalid.deprecated.hamlbars
+                name: support.constant.hamlbars
             '2':
-                name: invalid.deprecated.hamlbars
+                name: support.constant.hamlbars
         end: (~?\}\})
         endCaptures:
             '1':
-                name: invalid.deprecated.hamlbars
+                name: support.constant.hamlbars
         name: meta.function.block.end.hamlbars
         patterns: []
     entities:
