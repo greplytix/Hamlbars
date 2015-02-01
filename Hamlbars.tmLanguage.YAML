@@ -4,6 +4,57 @@ fileTypes:
 - hamlbars
 name: Hamlbars
 patterns:
+-   begin: ^\s*(?:((%)([\w:]+))|(?=\.|#))
+    captures:
+        '1':
+            name: meta.tag.hamlbars
+        '2':
+            name: punctuation.definition.tag.hamlbars
+        '3':
+            name: entity.name.tag.hamlbars
+    end: $|(?!\.|#|\{|\[|=|-|~|/)
+    patterns:
+    -   begin: ==
+        contentName: string.quoted.double.ruby
+        end: $\n?
+        patterns:
+        -   include: '#interpolated_ruby'
+    -   match: \.[\w-]+
+        name: entity.name.tag.class.hamlbars
+    -   match: '#[\w-]+'
+        name: entity.name.tag.id.hamlbars
+    -   match: /
+        name: punctuation.terminator.tag.hamlbars
+    -   begin: \{(?=.*\}|.*\|\s*$)
+        end: \}|$|^(?!.*\|\s*$)
+        name: meta.section.attributes.hamlbars
+        patterns:
+        -   begin: ("|\')
+            beginCaptures:
+                '0': {name: string.quoted.double.hamlbars}
+            end: \1
+            endCaptures:
+                '0': {name: string.quoted.double.hamlbars}
+            patterns:
+            -   begin: (\{{2})([a-zA-Z0-9\._-]*?)([ ]|\})
+                beginCaptures:
+                    '1': {name: support.constant.hamlbars}
+                    '2': {name: variable.parameter.string.hamlbars}
+                    '3': {name: support.constant.hamlbars}
+                end: \}{1,2}
+                endCaptures:
+                    '0': {name: support.constant.hamlbars}
+            -   match: .*?
+                name: string.quoted.double.hamlbars
+        -   include: source.ruby.rails
+        -   include: '#continuation'
+    -   begin: \[(?=.*\]|.*\|\s*$)
+        end: \]|$|^(?!.*\|\s*$)
+        name: meta.section.object.hamlbars
+        patterns:
+        -   include: source.ruby.rails
+        -   include: '#continuation'
+    -   include: '#rubyline'
 -   match: ((\{)+else\}+)
     name: support.type.hamlbars
 -   begin: ^\s*==
@@ -29,40 +80,6 @@ patterns:
     name: comment.block.hamlbars
     patterns:
     -   include: text.hamlbars
--   begin: ^\s*(?:((%)([\w:]+))|(?=\.|#))
-    captures:
-        '1':
-            name: meta.tag.hamlbars
-        '2':
-            name: punctuation.definition.tag.hamlbars
-        '3':
-            name: entity.name.tag.hamlbars
-    end: $|(?!\.|#|\{|\[|=|-|~|/)
-    patterns:
-    -   begin: ==
-        contentName: string.quoted.double.ruby
-        end: $\n?
-        patterns:
-        -   include: '#interpolated_ruby'
-    -   match: \.[\w-]+
-        name: entity.name.tag.class.hamlbars
-    -   match: '#[\w-]+'
-        name: entity.name.tag.id.hamlbars
-    -   begin: \{(?=.*\}|.*\|\s*$)
-        end: \}|$|^(?!.*\|\s*$)
-        name: meta.section.attributes.hamlbars
-        patterns:
-        -   include: source.ruby.rails
-        -   include: '#continuation'
-    -   begin: \[(?=.*\]|.*\|\s*$)
-        end: \]|$|^(?!.*\|\s*$)
-        name: meta.section.object.hamlbars
-        patterns:
-        -   include: source.ruby.rails
-        -   include: '#continuation'
-    -   include: '#rubyline'
-    -   match: /
-        name: punctuation.terminator.tag.hamlbars
 -   captures:
         '1':
             name: meta.escape.hamlbars
