@@ -1,8 +1,9 @@
-fileTypes:
-- haml
-- sass
-- hamlbars
 name: Hamlbars
+scopeName: source.hamlbars
+fileTypes:
+- hamlbars
+- sass
+uuid: 29ec0980-2566-417c-8895-fc9768350bd1
 patterns:
 -   begin: ^\s*(?:((%)([\w:]+))|(?=\.|#))
     captures:
@@ -36,16 +37,16 @@ patterns:
             endCaptures:
                 '0': {name: string.quoted.double.hamlbars}
             patterns:
-            -   begin: (\{{2})([a-zA-Z0-9\._-]*?)([ ]|\})
+            -   begin: (\{{2,3})([a-zA-Z0-9\._-]*?)([ ]|\})
                 beginCaptures:
                     '1': {name: support.constant.hamlbars}
-                    '2': {name: variable.parameter.string.hamlbars}
+                    '2': {name: variable.parameter.hamlbars}
                     '3': {name: support.constant.hamlbars}
-                end: \}{1,2}
+                end: \}{1,3}
                 endCaptures:
                     '0': {name: support.constant.hamlbars}
             -   match: .*?
-                name: string.quoted.double.hamlbars
+                name: string.quoted.hamlbars
         -   include: source.ruby.rails
         -   include: '#continuation'
     -   begin: \[(?=.*\]|.*\|\s*$)
@@ -55,8 +56,8 @@ patterns:
         -   include: source.ruby.rails
         -   include: '#continuation'
     -   include: '#rubyline'
--   match: ((\{)+else\}+)
-    name: support.type.hamlbars
+-   match: \{{2}else\}{2}
+    name: support.constant.else.hamlbars
 -   begin: ^\s*==
     contentName: string.quoted.double.ruby
     end: $\n?
@@ -378,7 +379,7 @@ repository:
             '1':
                 name: support.constant.hamlbars
             '3':
-                name: entity.name.function.hamlbars
+                name: variable.parameter.hamlbars
         end: (~?\}\}\}*)
         endCaptures:
             '1':
@@ -463,5 +464,3 @@ repository:
             name: markup.raw.yaml.front-matter
             patterns:
             -   include: source.yaml
-scopeName: source.hamlbars
-uuid: 61ebb4ef-ed49-461f-98d7-e17067fce16a
