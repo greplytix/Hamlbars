@@ -2,9 +2,14 @@ name: Hamlbars
 scopeName: source.hamlbars
 fileTypes:
 - hamlbars
-- sass
 uuid: 29ec0980-2566-417c-8895-fc9768350bd1
 patterns:
+-   begin: ^.*?(-#)
+    beginCaptures:
+        '1': {name: comment.line.hamlbars}
+    end: .*?$
+    endCaptures:
+        '0': {name: comment.line.hamlbars}
 -   begin: ^\s*(?:((%)([\w:]+))|(?=\.|#))
     captures:
         '1':
