@@ -13,6 +13,13 @@ Clone this repository into one of the following directories:
 
 **Linux:** ~/.config/sublime-text-3/Packages/User
 
+Trouble-shooting:
+  If .hamlbar files are not being automatically associated with the Hamlbars language:
+    1. While viewing a .hamlbars file
+    2. Go to the bottom-right language switcher.
+    3. Go to sub-menu "Open all with current extension as...".
+    4. Select Hamlbars.
+
 ## Development Pipeline
 
 Contributors, when updating the syntax definitions, please transcompile the Hamlbars.tmLanguage.YAML (YAML) file to the Hamlbars.tmLanguage (plist) file via [SerializedDataConverter](https://packagecontrol.io/packages/SerializedDataConverter).
