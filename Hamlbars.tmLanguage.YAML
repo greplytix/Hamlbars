@@ -42,7 +42,7 @@ patterns:
             endCaptures:
                 '0': {name: string.quoted.double.hamlbars}
             patterns:
-            -   begin: (\{{2,3})([a-zA-Z0-9\._-]*?)([ ]|\})
+            -   begin: (\{{2,3})[ ]*([a-zA-Z0-9\._-]*?)([ ]|\})
                 beginCaptures:
                     '1': {name: support.constant.hamlbars}
                     '2': {name: variable.parameter.hamlbars}
