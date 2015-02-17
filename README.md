@@ -1,11 +1,11 @@
 Hamlbars
 ========
 
-Sublime Text 3 syntax definitions and theming for .hamlbars files which is a combination of both Haml and Handlebars.  
+Sublime Text 3 syntax definitions and auto-completions for .hamlbars files.  
 
 ## Installation
 #### With [Package Control](https://packagecontrol.io/)
-  1. Open the command pallete. (ctrl+shift+p)
+  1. Open the command palette. (ctrl+shift+p or command+shift+p)
   2. Type "install" and choose Package Control: Install Package
   3. Type "Hamlbars" and select the package by Greplytix.
   
