@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[{{else}}]]></content>
   <tabTrigger>else</tabTrigger>
-  <scope>source.hamlbars, text.html.handlebars,text.html.basic source.js.embedded.html, text.html.twig source.js.embedded.html</scope>
+  <scope>source.hamlbars</scope>
   <description>{{else}} (handlebars)</description>
 </snippet>
