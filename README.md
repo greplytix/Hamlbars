@@ -4,7 +4,12 @@ Hamlbars
 Sublime Text 3 syntax definitions and theming for .hamlbars files which is a combination of both Haml and Handlebars.  
 
 ## Installation
-### Manual
+#### With [Package Control](https://packagecontrol.io/)
+  1. Open the command pallete. (ctrl+shift+p)
+  2. Type "install" and choose Package Control: Install Package
+  3. Type "Hamlbars" and select the package by Greplytix.
+  
+#### Manually
 Clone this repository into one of the following directories:
 
 **OS X:** ~/Library/Application Support/Sublime Text 3/Packages/User
@@ -13,7 +18,7 @@ Clone this repository into one of the following directories:
 
 **Linux:** ~/.config/sublime-text-3/Packages/User
 
-***Trouble-shooting:***
+#### Trouble-shooting:
 
 If .hamlbar files are not being automatically associated with the Hamlbars language:
   1. While viewing a .hamlbars file
