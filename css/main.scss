@@ -1,5 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Only this main sass file needs this front matter.
 ---
 @charset "utf-8";
 
@@ -21,7 +21,6 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-// Width of the content area
 $content-width:    960px;
 
 $on-palm:          600px;
@@ -44,7 +43,7 @@ $on-laptop:        800px;
 
 
 
-// Import partials from `sass_dir` (defaults to `_sass`)
+// Import partials from `_sass`
 @import
         "base",
         "layout",
