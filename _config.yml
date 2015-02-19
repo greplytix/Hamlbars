@@ -1,0 +1,18 @@
+# Site settings
+title: Hamlbars
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Hamlbars (haml + handlebars) syntax highlighting support for Sublime Text 
+  Editor.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://localhost:4000" # http://greplytix.github.io
+twitter_username: greplytix
+github_username:  greplytix
+
+# Build settings
+markdown: kramdown
+
+# Allowed ruby gem plugins
+gems:
+    - jekyll-sitemap
+    - jekyll-redirect-from

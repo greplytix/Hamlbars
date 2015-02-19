@@ -1,0 +1,52 @@
+---
+layout: page
+title: Contribute
+permalink: /contribute/
+---
+
+<style>
+#contributors{
+	overflow:auto;
+}
+
+#contributors .contributor{
+	float:left;
+	margin:5px;
+	text-align:center;
+}
+
+#contributors .contributor img{
+	width:75px;
+	display:block;
+}
+</style>
+
+<h4>Ways to Contribute</h4>
+<ul>
+<li>Open an <a href="https://guides.github.com/features/issues/">issue</a> on <a href="https://github.com/greplytix/Hamlbars/issues">github</a> for any bugs/errors.</li>
+<li>Open an <a href="https://guides.github.com/features/issues/">issue</a> on <a href="https://github.com/greplytix/Hamlbars/issues">github</a> for any missing features.</li>
+<li>Fork our <a href="https://github.com/greplytix/Hamlbars">github repository</a>, modify code, and submit a merge pull request.</li>
+</ul>
+
+<div class="indent">
+	<h4>To Test Contributions:</h4>
+
+	Clone your forked repository into one of the following directories, or place a symbolic link to the forked repository in one of the following directories:
+	<ul>
+		<li>Linux: ~/.config/sublime-text-3/Packages/User</li>
+		<li>OS X: ~/Library/Application Support/Sublime Text 3/Packages/User</li>
+		<li>Windows: %APPDATA%/Roaming/Sublime Text 3/Packages/User</li>
+	</ul>
+</div>
+
+<h4>Contributors</h4>
+<div id="contributors">
+{% for person in site.github.contributors %}
+	<div class="contributor">
+		<a href="{{person.url}}">
+			<img src="{{person.avatar_url}}" alt="{{person.login}}" />
+			{{person.login}}
+		</a>
+	</div>
+{% endfor %}
+</div>
